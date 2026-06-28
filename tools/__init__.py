@@ -15,9 +15,12 @@ tool by name and always returns a string result for the model.
 from typing import Any, Dict
 
 from tools import (
+    check_exists,
     cite_source,
     edit_section,
     fetch_article,
+    find_template,
+    template_info,
     translate_full_article,
     web_search,
     wiki_style_guide,
@@ -30,6 +33,9 @@ _MODULES = [
     web_search,
     wiki_style_guide,
     cite_source,
+    find_template,
+    template_info,
+    check_exists,
     edit_section,
 ]
 

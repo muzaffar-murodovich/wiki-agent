@@ -59,10 +59,19 @@ Bularning hammasi inglizcha CS1 parametrlarini qabul qiladi (`url`, `title`, `au
 <ref>{{Veb manbasi |url=https://example.org/maqola |title=Maqola sarlavhasi |author=Ism Familiya |website=Example |date=2024-05-01 |access-date=2026-06-28 |language=en}}</ref>
 ```
 
+## Andoza/turkum topish va tekshirish (jonli)
+
+Qoʻllanmada yoʻq andoza (masalan infobox) kerak boʻlsa yoki nomga ishonchingiz boʻlmasa:
+- **`find_template("<kalit soʻz>")`** — uz.wiki'dan mavjud andozani topadi (masalan "daryo"
+  → `{{Daryo bilgiqutisi}}`). Nomni oʻzingiz oʻylab topmang.
+- **`template_info("<andoza>")`** — andoza mavjudligini tasdiqlaydi va parametrlarini beradi.
+- **`check_exists([...])`** — turkum/maqola/andoza mavjudligini tekshiradi.
+
 ## Turkumlar (kategoriyalar)
 
 - Maqola oxirida: `[[Turkum:<nom>]]`. Kamida bittasi boʻlsin.
-- Turkum nomi uz.wiki'da mavjudligiga ishonch hosil qiling (kerak boʻlsa tekshiring).
+- Turkum nomini **doim `check_exists` bilan tekshiring** — mavjud boʻlmaganini qoʻshmang
+  (uz.wiki'da koʻp turkum "...dagi daryolar" kabi oʻziga xos nomlanadi).
 
 ## Muhim eslatmalar
 
