@@ -34,8 +34,11 @@ Yangi maqola yozayotganda faqat shu yerdagi andozalardan foydalaning; nomlarni o
 - Manba matn ichida qoʻyiladi va `{{Manbalar}}` (== Manbalar == boʻlimida) uni roʻyxatga chiqaradi:
   `... muhim fakt.<ref>{{Veb manbasi|...}}</ref>`
 - **Nomli (takroriy) manba** — bir manbani bir necha marta ishlatish:
-  - birinchi marta: `<ref name="bbc2024">{{Veb manbasi|...}}</ref>`
-  - keyin: `<ref name="bbc2024" />`
+  - **birinchi marta toʻliq taʼrif bilan**, matn ICHIDA: `<ref name="bbc2024">{{Veb manbasi|...}}</ref>`
+  - keyingi marta qisqa shaklda: `<ref name="bbc2024" />`
+  - ⚠️ Toʻliq `<ref name="...">{{...}}</ref>` taʼrifi kamida bir marta matn ichida boʻlishi SHART.
+    Uni maqoladan tashqarida (alohida roʻyxatda) qoldirmang — aks holda manba "buzilgan" boʻladi.
+    Agar har joyda `<ref name="x" />` ishlatib, hech qayerda toʻliq taʼrif boʻlmasa — xato.
 - `== Manbalar ==` ostida doim `{{Manbalar}}` boʻlishi shart (aks holda manbalar koʻrinmaydi).
 - Eslatma/izohlar uchun alohida `{{Eslatmalar}}` andozasi bor (ixtiyoriy).
 

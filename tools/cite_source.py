@@ -89,5 +89,9 @@ def run(type: str, title: str, url: str = "", author: str = "", work: str = "",
     if name.strip():
         ref = f'<ref name="{name.strip()}">{citation}</ref>'
         reuse = f'<ref name="{name.strip()}" />'
-        return f"{ref}\n(Takror ishlatish uchun: {reuse})"
+        return (
+            f"{ref}\n"
+            f"MUHIM: shu toʻliq taʼrifni manbaning BIRINCHI ishlatilgan joyiga matn ichiga "
+            f"qoʻying. Keyingi takrorlarda esa faqat: {reuse}"
+        )
     return f"<ref>{citation}</ref>"
