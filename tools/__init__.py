@@ -14,12 +14,14 @@ tool by name and always returns a string result for the model.
 
 from typing import Any, Dict
 
-from tools import fetch_article, translate_full_article
+from tools import edit_section, fetch_article, translate_full_article, web_search
 
 # Order matters only for display; the model picks by name.
 _MODULES = [
     translate_full_article,
     fetch_article,
+    web_search,
+    edit_section,
 ]
 
 SCHEMAS = [m.SCHEMA for m in _MODULES]

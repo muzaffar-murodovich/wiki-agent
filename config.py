@@ -31,6 +31,10 @@ TRANSLATION_MODEL = os.getenv("TRANSLATION_MODEL", "gpt-5.2")
 REVIEW_PROVIDER = os.getenv("REVIEW_PROVIDER", "openai")
 REVIEW_MODEL = os.getenv("REVIEW_MODEL", "gpt-5.4-mini")
 
+# Editing existing wikitext (Phase B). Defaults to the translation role.
+EDIT_PROVIDER = os.getenv("EDIT_PROVIDER", TRANSLATION_PROVIDER)
+EDIT_MODEL = os.getenv("EDIT_MODEL", TRANSLATION_MODEL)
+
 # Backwards-compatible alias used by a few copied modules.
 OPENAI_MODEL = TRANSLATION_MODEL
 
@@ -93,9 +97,11 @@ Foydalanuvchi tabiiy tilda buyruq beradi. Siz quyidagi vositalardan (tools) foyd
 QOIDALAR:
 1) Toʻliq maqola tarjimasi soʻralsa — albatta `translate_full_article` vositasini chaqiring. Tarjimani oʻzingiz qoʻlda yozmang.
 2) Vositadan kelgan natijaga ishoning; uni qayta yozib chiqmang.
-3) Nashr (`publish`) yoki yozuvchi amallar inson tasdigʻini talab qiladi — buni tizim oʻzi soʻraydi.
-4) Foydalanuvchiga oʻzbek tilida, qisqa va aniq javob bering.
-5) Vazifa tugagach, qisqacha xulosa qiling (nima qilindi, natija qayerda)."""
+3) Yangi maqola soʻralsa: avval `web_search` bilan manba toʻplang, soʻng oʻzbekcha wikitext yozing — kirish, boʻlimlar, <ref> manbalar va [[Turkum:...]] kategoriyalari bilan.
+4) Mavjud maqolani tahrirlash uchun: kerak boʻlsa `fetch_article(lang='uz')` bilan matnni oling, soʻng `edit_section` chaqiring.
+5) Nashr (`publish`) yoki yozuvchi amallar inson tasdigʻini talab qiladi — buni tizim oʻzi soʻraydi.
+6) Foydalanuvchiga oʻzbek tilida, qisqa va aniq javob bering.
+7) Vazifa tugagach, qisqacha xulosa qiling (nima qilindi, natija qayerda)."""
 
 # --- Translation Prompt Settings ---
 
@@ -143,6 +149,27 @@ MUHIM CHEKLOVLAR:
 3) Izoh yozmang. Faqat tuzatilgan wikitext chiqaring."""
 
 REVIEW_USER_PROMPT = """MATN:
+```
+{text}
+```
+"""
+
+# --- Edit Prompt Settings (Phase B) ---
+
+EDIT_SYSTEM_PROMPT = """Siz oʻzbekcha Vikipediya muharririsiz.
+
+Sizga maqolaning bir boʻlimi (wikitext) va foydalanuvchining tahrir koʻrsatmasi beriladi.
+Vazifangiz — faqat koʻrsatmaga muvofiq oʻzgartirish kiriting.
+
+MUHIM CHEKLOVLAR:
+1) Faqat soʻralgan oʻzgarishni qiling; qolgan matnga tegmang.
+2) Wikitext tuzilishini ({{...}}, [[...]], <ref>...</ref>, sarlavhalar) buzmang.
+3) Til — oʻzbekcha (lotin). Izoh yozmang. Faqat tahrirlangan wikitext'ni chiqaring."""
+
+EDIT_USER_PROMPT = """KOʻRSATMA:
+{instruction}
+
+BOʻLIM (wikitext):
 ```
 {text}
 ```

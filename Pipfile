@@ -8,6 +8,7 @@ openai = "*"
 pywikibot = "*"
 mwparserfromhell = "*"
 python-dotenv = "*"
+ddgs = "*"
 
 [dev-packages]
 pytest = "*"
