@@ -29,10 +29,24 @@ Yangi maqola yozayotganda faqat shu yerdagi andozalardan foydalaning; nomlarni o
   **Adabiyotlar** (Further reading), **Havolalar** yoki **Tashqi havolalar** (External links).
 - Maqola juda qisqa (stub) boʻlsa, eng oxiriga (turkumlardan oldin) `{{Chala}}` qoʻying.
 
+## Ichki havolalar (wikilink) — MUHIM
+
+Matnda boshqa maqolalarga oid muhim atamalarni `[[...]]` bilan havola qiling. Bu Vikipediyaning
+asosiy talabi — havolasiz maqola "yetim" boʻladi.
+
+- Geografik joylar, shaxslar, tashkilotlar, tushunchalar, sanalar/voqealar — birinchi marta
+  uchraganda havola qiling: `[[Toshkent]]`, `[[Sirdaryo]]`, `[[Chorvoq suv ombori]]`, `[[Metropoliten]]`.
+- Quvur (`|`) bilan koʻrinadigan matnni oʻzgartirish mumkin: `[[Sirdaryo|Sirdaryoga]]`.
+- **Faqat birinchi marta** havola qiling; har takrorda emas. Ortiqcha havola (over-linking) ham yomon.
+- Havola qilingan maqola/atama uz.wiki'da boʻlishi ehtimoli boʻlsa havola qiling; ishonchsiz boʻlsangiz
+  `check_exists` bilan tekshiring (lekin qizil havola — mavjud boʻlmagan maqolaga — ham normal, agar atama munosib boʻlsa).
+
 ## Manbalar (`<ref>`) mexanikasi
 
-- Manba matn ichida qoʻyiladi va `{{Manbalar}}` (== Manbalar == boʻlimida) uni roʻyxatga chiqaradi:
-  `... muhim fakt.<ref>{{Veb manbasi|...}}</ref>`
+- Manba matn ichida qoʻyiladi va `{{Manbalar}}` (== Manbalar == boʻlimida) uni roʻyxatga chiqaradi.
+- **Tinish belgisi (nuqta, vergul) `<ref>` dan KEYIN qoʻyiladi** — bu uz.wiki uslubi:
+  - ✅ toʻgʻri: `... muhim fakt<ref>{{Veb manbasi|...}}</ref>.`
+  - ❌ notoʻgʻri: `... muhim fakt.<ref>{{Veb manbasi|...}}</ref>`
 - **Nomli (takroriy) manba** — bir manbani bir necha marta ishlatish:
   - **birinchi marta toʻliq taʼrif bilan**, matn ICHIDA: `<ref name="bbc2024">{{Veb manbasi|...}}</ref>`
   - keyingi marta qisqa shaklda: `<ref name="bbc2024" />`

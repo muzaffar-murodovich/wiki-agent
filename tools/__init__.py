@@ -19,6 +19,7 @@ from tools import (
     cite_source,
     edit_section,
     fetch_article,
+    finalize_article,
     find_template,
     template_info,
     translate_full_article,
@@ -36,6 +37,7 @@ _MODULES = [
     find_template,
     template_info,
     check_exists,
+    finalize_article,
     edit_section,
 ]
 
