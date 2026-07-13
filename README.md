@@ -42,6 +42,6 @@ Tarjima natijasi `temp_wiki/<Maqola nomi>.txt` ga saqlanadi.
 ## Holat (roadmap)
 
 - [x] **A (MVP)**: provayder abstraktsiyasi, agentik loop, `fetch_article`, `translate_full_article`.
-- [ ] **B**: `web_search` (yangi maqola), `edit_section` (tahrirlash).
+- [x] **B**: `web_search` (yangi maqola), `edit_section` (tahrirlash).
 - [ ] **C**: `publish` — inson tasdigʻi bilan uz.wiki'ga nashr (pywikibot).
 - [ ] **D**: Chrome toolbar kengaytmasi (xuddi shu agent yadrosi).
